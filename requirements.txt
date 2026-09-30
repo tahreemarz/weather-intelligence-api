@@ -1,0 +1,11 @@
+# Public dependencies (PyPI). The custom package is installed separately from TestPyPI with --no-deps,
+# so that pip never resolves numpy/pandas/... against TestPyPI's incomplete index:
+#   pip install -r requirements.txt
+#   pip install --no-deps --index-url https://test.pypi.org/simple/ "amla-package-26016360>=0.2.0"
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+numpy>=1.26,<3
+pandas>=2.2,<4
+scikit-learn>=1.5,<2
+xgboost>=2.1,<4
+requests>=2.31,<3

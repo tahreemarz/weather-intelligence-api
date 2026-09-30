@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weather-intelligence-api"
+version = "1.0.0"
+description = "FastAPI service serving the Climate Comfort Index and Weather Hazard Category forecasts for Sydney (AT2 - Machine Learning as a Service)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Tahreema Rahman Zariyat" }]
+dependencies = [
+  # NOTE: the custom package "amla-package-26016360>=0.2.0" is NOT on PyPI; install it separately:
+  #   pip install --no-deps --index-url https://test.pypi.org/simple/ "amla-package-26016360>=0.2.0"
+  "fastapi>=0.110,<1",
+  "uvicorn[standard]>=0.29,<1",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+  "scikit-learn>=1.5,<2",
+  "xgboost>=2.1,<4",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]   # or httpx2 with newer starlette
+
+[project.urls]
+Homepage = "https://github.com/tahreemarz/weather-intelligence-api"
+Experiments = "https://github.com/tahreemarz/weather-intelligence-experiments"
+Package = "https://test.pypi.org/project/amla-package-26016360/"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

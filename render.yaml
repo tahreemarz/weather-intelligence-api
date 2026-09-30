@@ -1,0 +1,19 @@
+# Render Blueprint - deploy with "New +" -> "Blueprint" and point Render at this repository.
+services:
+  - type: web
+    name: weather-intelligence-api
+    runtime: docker
+    plan: free
+    region: singapore          # closest region to Sydney; any region works
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: MODELS_DIR
+        value: /app/models
+      - key: GITHUB_URL
+        value: https://github.com/tahreemarz/weather-intelligence-api
+      - key: EXPERIMENTS_URL
+        value: https://github.com/tahreemarz/weather-intelligence-experiments
+      - key: LOG_LEVEL
+        value: INFO
