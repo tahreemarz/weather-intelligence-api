@@ -12,8 +12,7 @@ for Sydney, NSW (lat −33.8688, lon 151.2093):
 | `GET /predict/index/comfort_climate?date=YYYY-MM-DD` | XGBoost regressors (one per horizon) | Climate Comfort Index (0–100) for `date+1`, `date+2`, `date+3` |
 | `GET /predict/category/weather_hazard?date=YYYY-MM-DD` | XGBoost multiclass classifier | Weather Hazard Category for `date+7` |
 
-Live deployment: **https://weather-intelligence-api.onrender.com** *(update after deploying —
-free instances sleep after inactivity, so the first request can take ~1 minute)*.
+Live deployment: **https://weather-intelligence-api-6f18.onrender.com** (free instance — the first request after idle can take up to a minute).
 
 All modelling logic — Open-Meteo access, daily aggregation, cleaning, the target
 formulas, feature engineering, artefact loading and prediction — comes from my custom
