@@ -152,7 +152,7 @@ request afterwards takes up to a minute), and memory is 512 MB, which is suffici
 * **New artefacts**: re-run the notebooks in the experimentation repository, copy
   `models/comfort_climate` and `models/weather_hazard` here, commit, push.
 * **Package change** (formulas, features, cleaning): change it in the
-  [package repository](https://github.com/tahreemarz/36120-26SP-group2-26016360-package),
+  [package repository](https://github.com/tahreemarz/36120-26SP-26016360-package),
   bump the version, `python -m build && twine upload --repository testpypi dist/*`, then
   bump the pin in `requirements.txt` / `pyproject.toml` in both repositories and retrain,
   because the frozen feature list inside the artefacts must match the package version
